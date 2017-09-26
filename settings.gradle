@@ -1,0 +1,1 @@
+include "atividade-rest-api", "atividade-rest-core", "atividade-rest-ear", "atividade-rest-war"

@@ -1,0 +1,19 @@
+
+
+apply plugin: 'ear'
+
+dependencies{
+	deploy project(path: ':atividade-rest-war' ,configuration: 'archives')
+	earlib project (':atividade-rest-core')
+	earlib project (':atividade-rest-api')
+	}
+	
+ear{
+	deploymentDescriptor {
+		def warName = project(':atividade-rest-war').name
+		def warVersion = project(':atividade-rest-war').version
+		def warFileName = warName + '-' + warVersion + '.war'
+		webModule(warFileName, 'atividade')
+	}
+}
+	
